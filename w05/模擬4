@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+void encode(int a)
+{
+    int b,c;
+    if(a/1000<5)
+    {
+        c=(a/1000+5)*10;
+    }
+    else
+    {
+        c=(a/1000-5)*10;
+    }
+    b=((a/10)%10)*1000+(a%10)*100+c+(a/100)%10;
+    printf("encode(%d) = %d\n",a,b);
+
+}
+
+void decode(int a)
+{
+    int b,c;
+    if(a/1000<5)
+    {
+        c=(a/1000+5)*10;
+    }
+    else
+    {
+        c=(a/1000-5)*10;
+    }
+    b=((a/10)%10)*1000+(a%10)*100+c+(a/100)%10;
+    printf("encode(%d) = %d\n",b,a);
+}
+
+int main()
+{
+    int a;
+    printf("Enter N (-1 to exit ):");
+    scanf("%d",&a);
+    if(-1)
+    {
+        printf("Bye! coding by 407410322");
+    }
+    else{
+    encode(a);
+    decode(a);
+    return 0;}
+}
